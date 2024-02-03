@@ -10,7 +10,7 @@ RUN pip install mistune
 RUN pip install asyncio
 RUN pip install pika
 RUN pip install fastapi
-
+RUN pip cache remove * && apt-get clean
 COPY . .
 
 EXPOSE 8000
