@@ -1,5 +1,7 @@
 FROM python:3.9.18-alpine3.19
 
+ENV REQUIREMENTS=
+
 WORKDIR /opt
 
 RUN apk update 
@@ -13,6 +15,7 @@ RUN pip install fastapi
 RUN pip cache remove *
 RUN apk cache clean
 COPY entrypoint.sh /.
+RUN chmod +x /entrypoint.sh
 COPY func.py .
 COPY README.md .
 
