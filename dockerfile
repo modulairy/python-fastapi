@@ -12,8 +12,10 @@ RUN pip install pika
 RUN pip install fastapi
 RUN pip cache remove *
 RUN apk cache clean
-COPY . .
+COPY entrypoint.sh /.
+COPY func.py .
+COPY README.md .
 
 EXPOSE 8000
 
-ENTRYPOINT ["/opt/app/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

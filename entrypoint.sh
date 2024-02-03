@@ -1,3 +1,3 @@
 #!/bin/sh
 
-uvicorn func:app --host 0.0.0.0 --port 8000
+uvicorn func:app --host 0.0.0.0 --port 8000 --reload
