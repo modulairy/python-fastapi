@@ -11,7 +11,11 @@ RUN pip install uvicorn
 RUN pip install mistune
 RUN pip install asyncio
 RUN pip install pika
+RUN pip install aio-pika
 RUN pip install fastapi
+RUN pip install pydantic
+RUN pip install pydantic[email]
+RUN pip install aiosmtplib
 RUN pip cache remove *
 RUN apk cache clean
 COPY entrypoint.sh /.
